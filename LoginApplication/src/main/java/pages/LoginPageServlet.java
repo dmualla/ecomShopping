@@ -15,7 +15,7 @@ public class LoginPageServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         HttpSession session = request.getSession(false);
-        boolean userlogged = session != null && session.getAttribute("username") != null;
+        boolean userlogged = session != null && session.getAttribute(ApplicationParams.USERNAME_PARAM) != null;
 
         if(userlogged) {
             response.sendRedirect(request.getContextPath() + ApplicationParams.APP_WELCOME_PAGE);
@@ -26,7 +26,7 @@ public class LoginPageServlet extends HttpServlet {
 
             if(request.getCookies() != null) {
                 for (Cookie cookie: request.getCookies()) {
-                    if(cookie.getName().equals(ApplicationParams.APP_COOKIE_NAME)) {
+                    if(cookie.getName().equals(ApplicationParams.USERNAME_PARAM)) {
                         username = cookie.getValue();
                         isChecked = "checked";
                     }

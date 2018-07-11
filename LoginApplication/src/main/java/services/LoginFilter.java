@@ -20,7 +20,7 @@ public class LoginFilter implements Filter {
         HttpSession session = request.getSession(false);
         String loginURI = request.getContextPath() + "/";
 
-        boolean loggedIn = session != null && session.getAttribute("username") != null;
+        boolean loggedIn = session != null && session.getAttribute(ApplicationParams.USERNAME_PARAM) != null;
 
         if (loggedIn) {
             chain.doFilter(request, response);

@@ -1,4 +1,6 @@
 package pages;
+import utilities.ApplicationParams;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -16,8 +18,8 @@ public class PageOneServlet extends HttpServlet {
         PrintWriter writer = response.getWriter();
         writer.print("<html><head><title>Lab 12</title></head><body>");
         writer.print("<div>Congrats!! you made it to the Page1 :)</div>");
-        writer.print("<div>Go to <a href='"+ request.getContextPath() + "/page2'>page2</a></div>");
-        writer.print("<div>Back to the <a href='"+ request.getContextPath() + "/welcome'>home page</a></div>");
+        writer.print("<div>Go to <a href='"+ request.getContextPath() + ApplicationParams.APP_PAGE2 +"'>page2</a></div>");
+        writer.print("<div>Back to the <a href='"+ request.getContextPath() + ApplicationParams.APP_WELCOME_PAGE + "'>home page</a></div>");
         writer.print("</body></html>");
         writer.close();
 
