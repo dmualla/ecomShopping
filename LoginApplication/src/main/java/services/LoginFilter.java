@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebFilter(urlPatterns = { "/welcome","/page1", "/page2"})
+@WebFilter(urlPatterns = { ApplicationParams.APP_WELCOME_PAGE, ApplicationParams.APP_PAGE1, ApplicationParams.APP_PAGE2})
 public class LoginFilter implements Filter {
 
     @Override
