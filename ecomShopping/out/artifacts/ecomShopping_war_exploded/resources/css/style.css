@@ -1,0 +1,186 @@
+/*
+lab13
+description: JSP & EL
+author: mohammed
+*/
+
+body {
+    padding: 0px;
+    margin: 0px;
+    font-family: monospace;
+    background-color: #f7f7f7;
+}
+
+.header {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: 99;
+    background-color: white;
+    height: 80px;
+    box-shadow: 0 4px 2px -2px lightgray;
+    padding-top: 10px;
+    padding-left: 20px;
+}
+
+.card {
+    margin-bottom: 20px;
+}
+
+.card-body {
+    background: gainsboro;
+    text-align: right;
+    padding-top: 15px;
+    padding-bottom: 0px;
+}
+
+.card-text {
+    float: left;
+    color: #ff6464;
+    font-weight: bold;
+    font-size: 20px;
+    font-style: italic;
+    padding-bottom: 10px;
+}
+
+.card-title {
+    text-align: left;
+}
+
+.container {
+    padding: 50px;
+    margin-top: 70px;
+}
+
+.cart-btn {
+    float: right;
+    margin-top: -40px;
+    margin-right: 16px;
+    width: 140px;
+}
+
+.menu-btn1 {
+    float: right;
+    margin-top: -40px;
+    margin-right: 16px;
+    width: 140px;
+}
+
+.menu-btn2 {
+    float: right;
+    margin-top: -40px;
+    margin-right: 180px;
+    width: 180px;
+}
+
+.homepage-btn {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.btn-add-to-cart {
+    width: 120px;
+    font-size: 12px;
+    text-align: center;
+    background-color: #ff6464;
+    border: #ff6464;
+}
+
+.btn-remove-from-cart {
+    width: 120px;
+    font-size: 12px;
+    text-align: center;
+    background-color: #ff6464;
+    border: #ff6464;
+}
+
+.right-column {
+    text-align: right;
+}
+
+.cart-size {
+    color: orange;
+}
+
+.page-title {
+    text-align: center;
+    padding: 5px;
+    background-color: #ff6464;
+    color: white;
+    margin-bottom: 40px;
+    border-radius: 40px;
+}
+
+.page-subtitle {
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+
+.total-row {
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.purchase-summary {
+    margin-left: 200px;
+    margin-right: 200px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.purchase-summary table {
+    font-size: 17px;
+}
+
+.checkout-section {
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+.checkout-note {
+    text-align: center;
+    font-size: 10px;
+    color: darkgray;
+}
+
+.submit-checkout-btn {
+    margin: 60px;
+    text-align: center;
+}
+
+.sign-container {
+    width: 400px;
+    margin: auto;
+}
+
+.sign-container button {
+    background-color: black;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.welcome-page-section {
+    text-align: center;
+    margin-top: -100px;
+}
+
+input[type="password"] {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.logout-btn {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    border-radius: 20px;
+    margin: 7px;
+    opacity: 0.4;
+    border: 3px solid gray;
+}
+
+.logout-btn:hover {
+    opacity: 1;
+}
