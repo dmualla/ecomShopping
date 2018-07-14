@@ -13,25 +13,35 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/menu.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/js/custom.js"></script>
 </head>
+
 <body>
-    <div class="header">
-        <h1>eComShopping</h1>
-        <c:if test="${sessionScope.username != null}">
-            <a href="<%= request.getContextPath() %>/logout" class="btn btn-dark logout-btn">Logout</a>
-        </c:if>
+
+    <div class="top-name">
+        <h1> <span class="logo-color">eCom</span>Shopping</h1>
+    </div>
+    <div id='cssmenu'>
+        <ul>
+            <li ><a href='<%= request.getContextPath() %>'><span>Home</span></a></li>
+            <li ><a href='<%= request.getContextPath() %>/products'><span>Products</span></a></li>
+            <li ><a href='<%= request.getContextPath() %>/cart'><span>Cart</span></a></li>
+            <li ><a href='<%= request.getContextPath() %>/account'><span>Account</span></a></li>
+            <li class='active last'><a href='<%= request.getContextPath() %>/checkout'><span>Checkout</span></a></li>
+        </ul>
     </div>
 
     <div class="container">
 
-        <h2 class="page-title">Congrats!</h2>
+        <h1 class="confirmation-section1"> Good News! </h1>
+        <h4 class="confirmation-section2"> Your transaction has been completed successfully :) </h4>
 
-        <h4 class="page-subtitle"> Transaction completed successfully :) </h4>
-
-        <div class="homepage-btn">
-            <a href="<%= request.getContextPath() %>" class="btn btn-dark btn-lg">Go to Homepage</a>
+        <div class="done-img">
+            <img src="https://i.imgur.com/w7aTRu4.png" width="200px" alt="done"/>
         </div>
 
         

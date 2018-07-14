@@ -1,9 +1,8 @@
 package controllers;
 
-import dao.ProductsData;
+import dao.DAO;
 import models.Product;
 
-import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,7 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
@@ -39,7 +37,7 @@ public class CartServlet extends HttpServlet {
         List<Product> cartProducts =  (List<Product>) session.getAttribute("cart-products");
 
         int productID = Integer.parseInt(request.getParameter("id"));
-        Product product = ProductsData.getProductById(productID);
+        Product product = DAO.getProductById(productID);
 
         if(product!=null) {
             cartProducts.remove(product);

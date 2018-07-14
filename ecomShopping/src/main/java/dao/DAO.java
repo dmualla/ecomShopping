@@ -1,11 +1,12 @@
 package dao;
 
 import models.Product;
+import models.User;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProductsData {
+public class DAO {
 
     private static List<Product> products =  new ArrayList<Product>() {
         {
@@ -25,6 +26,22 @@ public class ProductsData {
             add(new Product(1453663, "Product 14", "45", "http://img.roomeon.com/img/object/betonwuerfel-bau-elemente_dc2b2cff6c_xxl.png", false));
         }
     };
+
+    private static List<User> users =  new ArrayList<User>() {
+        {
+            add(new User(1, "admin", "admin", "Jeff Alex"));
+            add(new User(2, "bob", "1234", "Bob Martin"));
+        }
+    };
+
+    public static boolean checkUserCredentials(String username, String password) {
+        for (User user: DAO.users) {
+            if(user.getUsername().equals(username) && user.getPassword().equals(password)) {
+                return true;
+            }
+        }
+        return false;
+    }
 
     public static List<Product> getProductsList() {
         for (Product product: products) {

@@ -1,10 +1,8 @@
 package controllers;
 
-import dao.ProductsData;
-import models.Cart;
+import dao.DAO;
 import models.Product;
 
-import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -24,7 +22,7 @@ public class ProductsServlet extends HttpServlet {
 
 
         HttpSession session = request.getSession();
-        List<Product> products = ProductsData.getProductsList();
+        List<Product> products = DAO.getProductsList();
 
         if(session.getAttribute("cart-products") == null) {
             session.setAttribute("cart-products", new ArrayList<Product>());
@@ -52,7 +50,7 @@ public class ProductsServlet extends HttpServlet {
         List<Product> cartProducts =  (List<Product>) session.getAttribute("cart-products");
 
         int productID = Integer.parseInt(request.getParameter("id"));
-        Product product = ProductsData.getProductById(productID);
+        Product product = DAO.getProductById(productID);
 
         if(product!=null) {
             cartProducts.add(product);

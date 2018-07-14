@@ -7,8 +7,18 @@ author: mohammed
 body {
     padding: 0px;
     margin: 0px;
-    font-family: monospace;
-    background-color: #f7f7f7;
+    font-family: Nunito, monospace;
+    position: relative;
+}
+
+.top-name h1 {
+    text-align: center;
+    font-size: 30px;
+    margin-top: 10px;
+}
+
+.logo-color{
+    color: #ff6363;
 }
 
 .header {
@@ -24,33 +34,71 @@ body {
     padding-left: 20px;
 }
 
+.homepage-content {
+    text-align: center;
+}
+
 .card {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    border: 1px solid #ff62622b;
 }
 
 .card-body {
-    background: gainsboro;
-    text-align: right;
+    background: #f5f0f0;
+    text-align: center;
     padding-top: 15px;
-    padding-bottom: 0px;
-}
-
-.card-text {
-    float: left;
-    color: #ff6464;
-    font-weight: bold;
-    font-size: 20px;
-    font-style: italic;
-    padding-bottom: 10px;
 }
 
 .card-title {
-    text-align: left;
+    color: #ff6262;
+}
+
+.card-text {
+    font-size: 17px;
+    color: black;
+    margin-top: 10px;
+    font-weight: bold;
+    margin-bottom: 0px;
+}
+
+.cart-items-number {
+    margin-bottom: 50px;
+    font-size: 16px;
+    width: 50%;
+    display: inline-block;
+}
+
+.checkout-btn-section {
+    display: inline-block;
+    width: 49%;
+    text-align: right;
+}
+
+.checkout-btn-section a {
+    background-color: #ff6262;
+    padding: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+    border-radius: 20px;
+    color: white;
+    box-shadow: 0px 0px 11px #bbbbbb;
+    text-transform: uppercase;
+}
+
+.checkout-btn-section a:hover {
+    background-color: #ffffff;
+    color: #ff6262;
+    text-decoration: none;
 }
 
 .container {
     padding: 50px;
-    margin-top: 70px;
+    margin-top: 40px;
+}
+
+.homepage-description {
+    font-size: 40px;
+    padding: 30px;
 }
 
 .cart-btn {
@@ -74,17 +122,36 @@ body {
     width: 180px;
 }
 
-.homepage-btn {
+.done-img {
     text-align: center;
-    margin-top: 100px;
+    margin-top: 70px;
+}
+
+.done-img img {
+    opacity: 0.3;
 }
 
 .btn-add-to-cart {
     width: 120px;
-    font-size: 12px;
+    font-size: 15px;
     text-align: center;
     background-color: #ff6464;
     border: #ff6464;
+}
+
+.btn-info:hover {
+    color: #ff6363;
+    background-color: #fff;
+}
+
+.btn-info:hover {
+    color: #ff6363;
+    background-color: #fff;
+}
+
+.btn-info:active {
+    color: #ff6363 !important;
+    background-color: #fff !important;
 }
 
 .btn-remove-from-cart {
@@ -115,7 +182,7 @@ body {
 .page-subtitle {
     text-align: center;
     margin-bottom: 40px;
-    margin-top: 40px;
+    margin-top: 80px;
 }
 
 .total-row {
@@ -171,6 +238,16 @@ input[type="password"] {
     margin-bottom: 10px;
 }
 
+.confirmation-section1 {
+    text-align: center;
+}
+
+.confirmation-section2 {
+    text-align: center;
+    color: #ff6262;
+}
+
+
 .logout-btn {
     position: fixed;
     bottom: 0;
@@ -183,4 +260,19 @@ input[type="password"] {
 
 .logout-btn:hover {
     opacity: 1;
+}
+
+#empty-cart {
+    text-align: center;
+    opacity: 0.2;
+    display: none;
+}
+
+.footer {
+    text-align: center;
+    padding: 10px;
+    font-size: 11px;
+    color: gray;
+    position: absolute;
+    left: 45%;
 }

@@ -50,7 +50,10 @@ author: mohammed
             $(".cart-size").html(child_length+" product");
         }
 
-        console.log("success");
+        $("#empty-cart").css("display", "none");
+        if( child_length == 0) {
+            $("#empty-cart").css("display", "block");
+        }
     }
 
     function ajaxFailureRomoveFromCart() {
@@ -73,6 +76,10 @@ author: mohammed
         $(".btn-add-to-cart").click(addToCart);
         $("#checkout").click(checkCart);
         $(".btn-remove-from-cart").click(removeFromCart);
+
+        if($('#selected-products').children().length == 0) {
+            $("#empty-cart").css("display", "block");
+        }
     });
 
 })();

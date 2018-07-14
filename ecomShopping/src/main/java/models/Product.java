@@ -6,7 +6,7 @@ public class Product {
     private String name;
     private String price;
     private String imgSrc;
-    private Boolean inCard = false;
+    private Boolean inCard;
 
     public Product(int id, String name, String price, String imgSrc, Boolean inCard) {
         this.id = id;

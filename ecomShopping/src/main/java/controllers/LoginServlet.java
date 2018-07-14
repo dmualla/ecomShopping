@@ -1,6 +1,6 @@
 package controllers;
 
-import dao.UsersData;
+import dao.DAO;
 import utilities.ApplicationParams;
 
 import javax.servlet.ServletException;
@@ -38,7 +38,7 @@ public class LoginServlet extends HttpServlet {
         String password = request.getParameter(ApplicationParams.PASSWORD_PARAM);
         String remember = request.getParameter(ApplicationParams.CHECK_PARAM);
 
-        if(UsersData.checkUserCredentials(username, password)) {
+        if(DAO.checkUserCredentials(username, password)) {
 
             if(remember != null) {
                 Cookie cookie = new Cookie(ApplicationParams.USERNAME_PARAM, username);
