@@ -1,7 +1,6 @@
 /*
-lab13
-description: JSP & EL
-author: mohammed
+description: Project CS 472
+author: The invincibles
 */
 
 body {
@@ -9,6 +8,10 @@ body {
     margin: 0px;
     font-family: Nunito, monospace;
     position: relative;
+}
+
+input:focus, a:focus, button:focus {
+    outline: none;
 }
 
 .top-name h1 {
@@ -53,12 +56,28 @@ body {
     color: #ff6262;
 }
 
+.card-title a {
+    color: #ff6262;
+    cursor: pointer;
+}
+
+.card-title a:hover {
+    text-decoration: none;
+    color: black;
+}
+
 .card-text {
     font-size: 17px;
     color: black;
     margin-top: 10px;
     font-weight: bold;
     margin-bottom: 0px;
+}
+
+img.card-img-top {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
 }
 
 .cart-items-number {
@@ -190,20 +209,15 @@ body {
     font-size: 17px;
 }
 
-.purchase-summary {
-    margin-left: 200px;
-    margin-right: 200px;
+.checkout-summary {
+    margin-left: 300px;
+    margin-right: 300px;
     border-radius: 20px;
     overflow: hidden;
 }
 
 .purchase-summary table {
     font-size: 17px;
-}
-
-.checkout-section {
-    margin-left: 200px;
-    margin-right: 200px;
 }
 
 .checkout-note {
@@ -215,6 +229,7 @@ body {
 .submit-checkout-btn {
     margin: 60px;
     text-align: center;
+    margin-bottom: 100px;
 }
 
 .sign-container {
@@ -236,6 +251,31 @@ body {
 input[type="password"] {
     margin-top: 10px;
     margin-bottom: 10px;
+}
+
+input[type="text"] {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.signup-link label{
+    width: 50%;
+}
+
+.signup-link div {
+    display: inline-block;
+    width: 48%;
+    font-size: 13px;
+    text-align: right;
+}
+
+.signin-link div{
+    font-size: 13px;
+    text-align: right;
+}
+
+.signup-link div a, .signin-link div a {
+    color: #ff6262;
 }
 
 .confirmation-section1 {
@@ -268,6 +308,102 @@ input[type="password"] {
     display: none;
 }
 
+.signup-note {
+    font-size: 11px;
+    text-align: right;
+    padding-top: 16px;
+    color: #ff6262;
+}
+
+.search {
+    margin-bottom: 50px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 4px #e6e6e6;
+}
+
+.search-input-container {
+    display: inline-block;
+    width: 40%;
+}
+
+.search-input-container input {
+    width: 100%;
+}
+
+.search-btn-container {
+    display: inline-block;
+    width: 20%;
+    text-align: center;
+}
+
+.no-result-found {
+    text-align: center;
+    width: 100%;
+}
+
+.no-result-found-text {
+    font-size: 24px;
+    color: #ff6262;
+}
+
+.no-result-found-img {
+    height: 250px;
+    margin: auto;
+}
+
+.search-btn {
+    background-color: #ff6262;
+    padding: 5px;
+    border: 1px solid #ff6262;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 18px;
+    color: white;
+    text-transform: uppercase;
+}
+
+.product-img-container {
+    float: left;
+    right: 0px;
+    top: 0px;
+    border: 4px solid #ff6262;
+    margin-right: 40px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.product-img-container img{
+    height: 300px;
+}
+
+.product-desc-container h3{
+    margin-bottom: 50px;
+}
+
+.product-desc-container div {
+    margin: 10px;
+    color: #ff6363;
+}
+
+.product-desc-container div span {
+    color: black;
+}
+
+.add-to-card-container {
+    clear: left;
+    margin-top: 100px !important;
+    text-align: center;
+}
+
+.search-btn:hover {
+    color: #ff6262;
+    background: white;
+    border: none;
+    box-shadow: 0px 0px 14px #c1bebe;
+}
+
 .footer {
     text-align: center;
     padding: 10px;
@@ -275,4 +411,5 @@ input[type="password"] {
     color: gray;
     position: absolute;
     left: 45%;
+    bottom: 0px;
 }

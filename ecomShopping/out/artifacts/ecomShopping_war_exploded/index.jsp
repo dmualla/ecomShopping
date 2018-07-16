@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: mohammed
-  Date: 7/12/18
-  Time: 2:16 AM
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
@@ -22,12 +15,29 @@
     <div class="top-name">
         <h1> <span class="logo-color">eCom</span>Shopping</h1>
     </div>
-    <div id='cssmenu'>
+    <div id='cssmenu' class="align-center">
         <ul>
             <li class='active'><a href='<%= request.getContextPath() %>'><span>Home</span></a></li>
-            <li><a href='<%= request.getContextPath() %>/products'><span>Products</span></a></li>
+            <li ><a href='<%= request.getContextPath() %>/products'><span>Products</span></a></li>
             <li><a href='<%= request.getContextPath() %>/cart'><span>Cart</span></a></li>
-            <li class='last'><a href='<%= request.getContextPath() %>/account'><span>Account</span></a></li>
+            <c:if test="${sessionScope.username != null}"  var="sessionExist">
+                <li class='last has-sub'>
+                    <a href='<%= request.getContextPath() %>/account'>
+                        <span>Account</span>
+                    </a>
+                    <ul>
+                        <li><a href="<%= request.getContextPath() %>/account">PROFILE</a></li>
+                        <li><a href="<%= request.getContextPath() %>/logout">LOGOUT</a></li>
+                    </ul>
+                </li>
+            </c:if>
+            <c:if test="${!sessionExist}">
+                <li class='last'>
+                    <a href='<%= request.getContextPath() %>/account'>
+                        <span>Account</span>
+                    </a>
+                </li>
+            </c:if>
         </ul>
     </div>
 

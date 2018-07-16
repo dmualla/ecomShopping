@@ -1,12 +1,15 @@
 package controllers;
 
 import dao.DAO;
+import models.Product;
+import utilities.ApplicationFunctions;
 import utilities.ApplicationParams;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
@@ -28,7 +31,7 @@ public class LoginServlet extends HttpServlet {
 
         request.setAttribute("username", username);
         request.setAttribute("isChecked", isChecked);
-        request.getRequestDispatcher("/WEB-INF/jsp/login.jsp").forward(request, response);
+        request.getRequestDispatcher(ApplicationParams.LOGIN_PAGE_LINK).forward(request, response);
     }
 
     @Override
@@ -48,10 +51,14 @@ public class LoginServlet extends HttpServlet {
 
             HttpSession session = request.getSession();
             session.setAttribute(ApplicationParams.USERNAME_PARAM,username);
-            response.sendRedirect(request.getContextPath() + ApplicationParams.CHECKOUT_PAGE );
+            List<Product> products = DAO.getProductsList();
+
+            ApplicationFunctions.redirectAuthenticatedUser(request, response, session, products);
 
         }else{
-            request.getRequestDispatcher("/WEB-INF/jsp/login.jsp").forward(request, response);
+            request.getRequestDispatcher(ApplicationParams.LOGIN_PAGE_LINK).forward(request, response);
         }
     }
+
+
 }

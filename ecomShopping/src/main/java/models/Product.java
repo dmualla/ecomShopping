@@ -6,13 +6,15 @@ public class Product {
     private String name;
     private String price;
     private String imgSrc;
+    private String description;
     private Boolean inCard;
 
-    public Product(int id, String name, String price, String imgSrc, Boolean inCard) {
+    public Product(int id, String name, String price, String imgSrc, String description, Boolean inCard) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.imgSrc = imgSrc;
+        this.description = description;
         this.inCard = inCard;
     }
 
@@ -48,6 +50,14 @@ public class Product {
         this.imgSrc = imgSrc;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     public Boolean getInCard() {
         return inCard;
     }
@@ -61,6 +71,6 @@ public class Product {
         if (obj == null) return false;
         if (!(obj instanceof Product)) return false;
         Product product = (Product) obj;
-        return this.id == product.id;
+        return this.getId() == product.getId();
     }
 }

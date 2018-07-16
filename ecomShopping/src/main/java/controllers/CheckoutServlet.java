@@ -1,6 +1,8 @@
 package controllers;
 
 import models.Product;
+import utilities.ApplicationFunctions;
+import utilities.ApplicationParams;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -18,14 +20,23 @@ public class CheckoutServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         HttpSession session = request.getSession();
-        List<Product> products = (List<Product>) session.getAttribute("cart-products");
-        int total = 0;
-        for (Product product: products) {
-            total += Integer.parseInt(product.getPrice());
+        if(session.getAttribute(ApplicationParams.SESSION_CART_PRODUCT_PARAM) != null) {
+            List<Product> products = (List<Product>) session.getAttribute(ApplicationParams.SESSION_CART_PRODUCT_PARAM);
+            if(products.size() > 0) {
+                int total = 0;
+                for (Product product: products) {
+                    total += Integer.parseInt(product.getPrice());
+                }
+                request.setAttribute("products", products);
+                request.setAttribute("total_price", Integer.toString(total));
+                request.getRequestDispatcher(ApplicationParams.CHECKOUT_PAGE_LINK).forward(request, response);
+            }else{
+                ApplicationFunctions.redirectToProductsPage(response, request);
+            }
+        }else{
+            ApplicationFunctions.redirectToProductsPage(response, request);
         }
-        request.setAttribute("products", products);
-        request.setAttribute("total_price", Integer.toString(total));
-        request.getRequestDispatcher("/WEB-INF/jsp/checkout.jsp").forward(request, response);
+
     }
 
     @Override
@@ -55,7 +66,7 @@ public class CheckoutServlet extends HttpServlet {
         System.out.println("----------------------------");
 
         HttpSession session = request.getSession();
-        session.removeAttribute("cart-products");
-        request.getRequestDispatcher("/WEB-INF/jsp/confirmation.jsp").forward(request, response);
+        session.removeAttribute(ApplicationParams.SESSION_CART_PRODUCT_PARAM);
+        request.getRequestDispatcher(ApplicationParams.CONFIRMATION_PAGE_LINK).forward(request, response);
     }
 }
