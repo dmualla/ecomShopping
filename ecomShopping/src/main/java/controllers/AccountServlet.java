@@ -41,7 +41,7 @@ public class AccountServlet extends HttpServlet {
         String id = request.getParameter("id");
         String fullname = request.getParameter("fullname");
         String email = request.getParameter("email");
-        String username = request.getParameter("password");
+        String username = request.getParameter("username");
         String password = request.getParameter("password");
 
         User user = new User(Integer.parseInt(id), username, password, fullname, email);

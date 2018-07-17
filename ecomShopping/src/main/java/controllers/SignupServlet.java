@@ -26,7 +26,7 @@ public class SignupServlet extends HttpServlet {
 
         String fullname = request.getParameter("fullname");
         String email = request.getParameter("email");
-        String username = request.getParameter("password");
+        String username = request.getParameter("username");
         String password = request.getParameter("password");
 
         User user = new User( DAO.generateNewUserID(), username, password, fullname, email);

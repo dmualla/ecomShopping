@@ -2,11 +2,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="java.util.List"%>
 <%@ page import="models.Product" %>
+<%@taglib prefix="ctm" uri="http://title.example" %>
 
 <html>
 
 <head>
-    <title>eComShopping</title>
+    <ctm:title title="Products" />
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css">
@@ -83,8 +84,6 @@
         </div>
     </div>
 
-    <div class="footer">
-        eComShopping &copy; 2018
-    </div>
+    <ctm:footer/>
 </body>
 </html>
