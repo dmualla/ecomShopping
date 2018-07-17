@@ -4,14 +4,14 @@ An online store for electronic products.
 
 ## Use cases
 
-* **Cart Management** Add/remove product to/from the cart 
-* **Checkout process** Purchase summary and billing/shipping address 
+* **Cart Management** Add/remove product from the cart
+* **Search Process** Search for product by name, update the view accordingly
 * **Account Management** Authentication (Signin/Sinup), Edit account
 
 
 ### Prerequisites
 
-Follow the MVC design pattern 
+Follow the MVC design pattern
 
 
 ## Built With
